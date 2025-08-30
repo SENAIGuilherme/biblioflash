@@ -1,0 +1,401 @@
+/**
+ * Estilos do Sistema de Carrinho/Reservas
+ * Design moderno e responsivo
+ */
+
+/* Painel do Carrinho */
+.cart-panel-modern {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background: #1a1a1a;
+    color: white;
+    z-index: 1000;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-panel-modern.active {
+    right: 0;
+}
+
+/* Cabeçalho do Painel */
+.cart-panel-header {
+    padding: 20px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2d2d2d;
+}
+
+.cart-panel-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-panel-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.cart-panel-close:hover {
+    background-color: #444;
+}
+
+/* Conteúdo do Painel */
+.cart-panel-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0;
+}
+
+/* Lista de Itens */
+.cart-items {
+    padding: 0;
+    margin: 0;
+}
+
+/* Item do Carrinho */
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #333;
+    transition: background-color 0.2s;
+}
+
+.cart-item:hover {
+    background-color: #2a2a2a;
+}
+
+.cart-item-image {
+    width: 50px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cart-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.cart-item-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cart-item-author {
+    font-size: 0.8rem;
+    color: #ccc;
+    margin: 0 0 3px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cart-item-date {
+    font-size: 0.7rem;
+    color: #888;
+}
+
+.cart-item-remove {
+    background: none;
+    border: none;
+    color: #ff4757;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.2s;
+    margin-left: 10px;
+}
+
+.cart-item-remove:hover {
+    background-color: #ff4757;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Carrinho Vazio */
+.empty-cart {
+    text-align: center;
+    padding: 60px 20px;
+    color: #888;
+}
+
+.empty-cart i {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.empty-cart p {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #ccc;
+}
+
+.empty-cart small {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Rodapé do Painel */
+.cart-panel-footer {
+    padding: 20px;
+    border-top: 1px solid #333;
+    background: #2d2d2d;
+}
+
+.btn-finalize-reservation {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-finalize-reservation:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-finalize-reservation:active {
+    transform: translateY(0);
+}
+
+/* Backdrop */
+.cart-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    backdrop-filter: blur(2px);
+}
+
+/* Contador do Carrinho */
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #ff4757;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Botões de Reserva */
+.btn-reservar,
+.btn-reserve {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-reservar:hover,
+.btn-reserve:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-reservar.btn-disabled,
+.btn-reserve.btn-disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-reservar.btn-disabled:hover,
+.btn-reserve.btn-disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Notificações */
+.cart-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1100;
+    max-width: 350px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: slideInRight 0.3s ease;
+}
+
+.cart-notification-content {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.cart-notification-success {
+    background: #d4edda;
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.cart-notification-error {
+    background: #f8d7da;
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+}
+
+.cart-notification-warning {
+    background: #fff3cd;
+    color: #856404;
+    border-left: 4px solid #ffc107;
+}
+
+.cart-notification-info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border-left: 4px solid #17a2b8;
+}
+
+.cart-notification-fade {
+    animation: slideOutRight 0.3s ease;
+}
+
+/* Animações */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cart-panel-modern {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .cart-notification {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-item {
+        padding: 12px 15px;
+    }
+    
+    .cart-item-image {
+        width: 40px;
+        height: 56px;
+        margin-right: 12px;
+    }
+    
+    .cart-item-title {
+        font-size: 0.85rem;
+    }
+    
+    .cart-item-author {
+        font-size: 0.75rem;
+    }
+    
+    .cart-panel-header {
+        padding: 15px;
+    }
+    
+    .cart-panel-footer {
+        padding: 15px;
+    }
+}
+
+/* Integração com tema escuro */
+@media (prefers-color-scheme: dark) {
+    .cart-notification-success {
+        background: #1e4d2b;
+        color: #a3d9a5;
+    }
+    
+    .cart-notification-error {
+        background: #4d1e24;
+        color: #f5a3aa;
+    }
+    
+    .cart-notification-warning {
+        background: #4d3d1e;
+        color: #f5d982;
+    }
+    
+    .cart-notification-info {
+        background: #1e3a4d;
+        color: #7dd3fc;
+    }
+}

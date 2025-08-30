@@ -1,0 +1,337 @@
+/* Book Register Form Styles */
+.form-cadastrar-livro {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
+}
+
+/* Form Layout */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+/* Form Labels */
+.form-label {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Form Controls */
+.form-control {
+    background: var(--input-bg, #2a2a2a);
+    border: 2px solid var(--border-color, #404040);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color, #007bff);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.form-control::placeholder {
+    color: var(--text-secondary, #888);
+}
+
+/* Textarea specific */
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Select specific */
+select.form-control {
+    cursor: pointer;
+}
+
+select.form-control option {
+    background: var(--card-bg);
+    color: var(--text-primary);
+}
+
+/* File input */
+input[type="file"].form-control {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+/* Current Cover Display */
+.current-cover {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.current-cover-label {
+    color: var(--text-secondary, #888);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.current-cover-image {
+    max-width: 120px;
+    max-height: 160px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+/* Form Check Group (Radio Buttons) */
+.form-check-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.form-check input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+    accent-color: var(--primary-color, #007bff);
+}
+
+.form-check-label {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Form Text Helper */
+.form-text {
+    color: var(--text-secondary, #888);
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    font-style: italic;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color, #404040);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3, #004085);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.btn-secondary {
+    background: var(--secondary-bg, #6c757d);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-bg-hover, #5a6268);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+}
+
+/* RFID Controls */
+.rfid-controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color, #404040);
+}
+
+.btn-rfid {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.btn-rfid:hover {
+    background: linear-gradient(135deg, #1e7e34, #155724);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.btn-rfid-write {
+    background: linear-gradient(135deg, #ffc107, #e0a800);
+    color: #212529;
+}
+
+.btn-rfid-write:hover {
+    background: linear-gradient(135deg, #e0a800, #d39e00);
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+}
+
+/* RFID Alert */
+.rfid-alert {
+    display: none;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+    font-weight: 500;
+}
+
+/* Alert Messages */
+.alert {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid;
+}
+
+.alert-success {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+    border-left-color: #28a745;
+}
+
+.alert-danger {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border-left-color: #dc3545;
+}
+
+.alert ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.alert li {
+    margin-bottom: 0.25rem;
+}
+
+.alert li:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .form-cadastrar-livro {
+        padding: 1.5rem;
+        margin-top: 1rem;
+    }
+    
+    .form-actions,
+    .rfid-controls {
+        flex-direction: column;
+    }
+    
+    .btn,
+    .btn-rfid {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-cadastrar-livro {
+        padding: 1rem;
+    }
+    
+    .dashboard-header {
+        text-align: center;
+    }
+    
+    .dashboard-title {
+        font-size: 1.5rem;
+    }
+    
+    .dashboard-subtitle {
+        font-size: 0.9rem;
+    }
+}
+
+/* Dark theme adjustments */
+@media (prefers-color-scheme: dark) {
+    .form-control {
+        background: #1a1a1a;
+        border-color: #333;
+        color: #e0e0e0;
+    }
+    
+    .form-control:focus {
+        border-color: #007bff;
+    }
+    
+    .form-label {
+        color: #e0e0e0;
+    }
+    
+    .alert-success {
+        background: rgba(40, 167, 69, 0.15);
+        color: #4caf50;
+    }
+    
+    .alert-danger {
+        background: rgba(220, 53, 69, 0.15);
+        color: #f44336;
+    }
+}

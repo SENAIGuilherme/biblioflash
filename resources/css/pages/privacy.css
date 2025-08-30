@@ -1,0 +1,33 @@
+/* Privacy Page Styles */
+.content-section {
+    margin-bottom: 2rem;
+}
+
+.content-section h3 {
+    color: #2c3e50;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+}
+
+.content-section ul {
+    padding-left: 1.5rem;
+}
+
+.content-section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+}
+
+.card-body {
+    line-height: 1.7;
+}
+
+p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
